@@ -1,17 +1,24 @@
 body{
-    font-family:sans-serif;
+    font-family:Arial, sans-serif;
     margin:0;
     padding:0;
 }
 nav{
+    width:100%;
+    background-color:#f5f5f5;
     padding:10px;
+    display:flex;
+    gap:10px;
+    align-items:center;
     border-bottom:1px solid #ccc;
 }
 #container{
     display:flex;
+    padding:10px;
 }
 #sidebar{
     width:250px;
+    background:#f8f8f8;
     padding:10px;
     border-right:1px solid #ccc;
 }
@@ -20,9 +27,23 @@ nav{
     padding:10px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:10px;
+    gap:15px;
 }
 .card{
-    padding:8px;
-    box-sahadow:0 0 5px rgba(0,0,0,0.2);
+    border:1px solid #ddd;
+    padding:10px;
+    background: white;
+    border-radius:5px;
+    text-align:center;
+    box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+.card img{
+    width:100%;
+    height:auto;
+    display:block;
+    margin:auto;
+}
+.cardbutton{
+    width:100%;
+    margin-top:5px;
 }
