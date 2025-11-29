@@ -8,6 +8,43 @@
     <script src="admin.js" defer></script>
 </head>
 <body>
-    
+    <nav>
+        <select id="categoryFilter">
+            <option value="All">All</option>
+            <option value="Auto">Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select>
+        <select id="availabilityFlter">
+            <option value="All">All</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+        <button id="clearFilter">Clear Filter</button>"
+    </nav>
+    <div id="container">
+        <aside id="sidebar">
+        <h2>Add Fleet</h2>
+        <input id="regNo" placeholder="Reg No.Of Vehicles"/>
+        <select id="category">
+            <option value=""></option>
+            <option value="Auto">Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select>
+        <input id="driver" placeholder="Driver Name">
+            <select id="isAvailable">                       
+                <option value="Available">Available</option>
+                <option value="Unavailable">Unavailable</option>
+            </select>
+            <button id ="addFleet">Add Fleet</button>
+            <p id="errorMsg"></p>
+        </aside>
+        <main id="cardsContainer">
+        </main>
+    </div>
+
 </body>
 </html>
