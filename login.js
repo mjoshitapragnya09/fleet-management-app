@@ -18,3 +18,8 @@ function()
             alert("Wrong Email or Password")
     }    
 });
+ function handleUpdateDriver(id){
+    let fleet=fleets.find((f)=>f.id===id);
+    if(!fleet)return;
+    let newName=prompt
+ }

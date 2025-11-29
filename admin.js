@@ -65,3 +65,39 @@ function renderCards(data){
         cardsCountainer.appendChild(card);
     });
 }
+function handleUpdateDriver(id){
+    let fleet=fleets.find((f)=>f.id===id);
+    if(!fleet)return;
+    let newName=prompt("Enter new driver name:", fleet.driver);
+    if(newName === null)return;
+    newName=newName.trim();
+    if(newName ===""){
+        alert("Driver name cannot be empty");
+        return;
+    }
+    fleet.driver=newName;
+    renderCards(applyFilters());
+}
+function handleChangeAvailability(id){
+    let fleet=fleets.find((f)=>f.id===id);
+    if(!fleet)return;
+    fleet.availability=fleet.availability==="Available" ? "Not Available" : "Available ";
+    renderCards(applyFilters());
+}
+function handleDeleteFleet(id){
+    let isSure=confirm("Are you sure you want to delete this vehicle?");
+    if(!isSure)return;
+    fleets=fleets.filter((f)=>f.id !==id);
+    renderCards(applyFilters());
+}
+categoryFilter.addEventListener("change", function(){
+    renderCards(applyFilters());
+});
+availabilityFilter.addEventListener("change", function(){
+    renderCards(applyFilters());
+});
+clearFilterBtn.addEventListener("click", function(){
+    categoryFilter.value="";
+    availabilityFilter.value="";
+    renderCards(fleets);
+});
